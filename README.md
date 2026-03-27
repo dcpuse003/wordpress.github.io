@@ -1,4 +1,3 @@
-# wordpress.github.io
 # Wordpress 的基礎認識
 
 - #### 什麼是 WordPress？
