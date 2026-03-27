@@ -1,0 +1,617 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>什麼是WordPress？</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='什麼是wordpress'><span>什麼是WordPress？</span></h1><h4 id='wordpress-是一款廣受歡迎的內容管理系統cms）及部落格blog平台讓使用者能夠輕鬆建立和管理網站它於-2003-年首次發布此後已成為網路上使用最廣泛的平台之一為各行各業的數百萬個網站提供技術支援'><span>WordPress 是一款廣受歡迎的內容管理系統（CMS）及部落格(Blog)平台，讓使用者能夠輕鬆建立和管理網站。它於 2003 年首次發布，此後已成為網路上使用最廣泛的平台之一，為各行各業的數百萬個網站提供技術支援。</span></h4><h4 id='從本質上來說wordpress-是一款以-php-編寫的開源軟體這意味著其原始碼可供自由取得開發者亦可對其進行修改與擴充這種開源特性促成了其極高的普及度因為它讓龐大的開發者社群能夠持續改進並強化這個平台'><span>從本質上來說，WordPress 是一款以 PHP 編寫的開源軟體，這意味著其原始碼可供自由取得，開發者亦可對其進行修改與擴充。這種開源特性促成了其極高的普及度，因為它讓龐大的開發者社群能夠持續改進並強化這個平台。</span></h4><h4 id='wordpress-提供了一個使用者友善的介面讓即使對程式碼一竅不通的人也能高效地建立和管理網站它採用基於範本的系統使用者可以從眾多預先設計好的網站主題中挑選來打造網站的整體外觀與版面配置這些主題可透過-wordpress-自訂工具或直接編輯底層程式碼來進一步客製化'><span>WordPress 提供了一個使用者友善的介面，讓即使對程式碼一竅不通的人也能高效地建立和管理網站。它採用基於範本的系統，使用者可以從眾多預先設計好的網站主題中挑選，來打造網站的整體外觀與版面配置。這些主題可透過 WordPress 自訂工具，或直接編輯底層程式碼來進一步客製化。</span></h4><h4 id='除了佈景主題外wordpress-還提供種類繁多的外掛程式這些外掛程式能為網站增添額外功能wordpress-外掛程式目錄中收錄了數以千計的免費與付費外掛程式涵蓋電子商務搜尋引擎優化seo）聯絡表單社群媒體整合等各式各樣的功能透過外掛程式使用者無需編寫自訂程式碼即可根據特定需求和要求來客製化自己的網站'><span>除了佈景主題外，WordPress 還提供種類繁多的外掛程式，這些外掛程式能為網站增添額外功能。WordPress 外掛程式目錄中收錄了數以千計的免費與付費外掛程式，涵蓋電子商務、搜尋引擎優化（SEO）、聯絡表單、社群媒體整合等各式各樣的功能。透過外掛程式，使用者無需編寫自訂程式碼，即可根據特定需求和要求來客製化自己的網站。</span></h4><h4 id='wordpress-不僅限於部落格功能更已發展成一套功能強大的內容管理系統cms）能夠處理複雜的網站它提供分層式的頁面-pages與文章posts系統讓使用者既能建立關於我們about-us聯絡我們contact和服務services等靜態頁面也能發布動態的部落格文章此外該平台還支援多作者協作功能因此非常適合企業businesses新聞網站news-websites及其他以內容為主導content-driven的平台'><span>WordPress 不僅限於部落格功能，更已發展成一套功能強大的內容管理系統（CMS），能夠處理複雜的網站。它提供分層式的頁面( pages)與文章(posts)系統，讓使用者既能建立「關於我們(About Us)」、「聯絡我們(Contact)」和「服務(Services)」等靜態頁面，也能發布動態的部落格文章。此外，該平台還支援多作者協作功能，因此非常適合企業(businesses)、新聞網站(news websites)及其他以內容為主導(content-driven)的平台。</span></h4><h4 id='在底層架構上wordpress-採用資料庫來儲存網站內容包括文章頁面留言及使用者資訊透過資料庫驅動的架構wordpress-能夠高效地檢索與管理內容它還提供強大的內建功能來管理使用者角色與權限讓網站擁有者能夠控制哪些人可以存取及編輯網站的各個部分'><span>在底層架構上，WordPress 採用資料庫來儲存網站內容，包括文章、頁面、留言及使用者資訊。透過資料庫驅動的架構，WordPress 能夠高效地檢索與管理內容。它還提供強大的內建功能來管理使用者角色與權限，讓網站擁有者能夠控制哪些人可以存取及編輯網站的各個部分。</span></h4><h4 id='此外wordpress-特別重視搜尋引擎優化使建置於該平台上的網站更容易在搜尋引擎結果中獲得良好的排名該平台能產生簡潔且結構完善的-html-程式碼提供可自訂的固定連結並支援使用-seo-外掛程式以針對搜尋引擎優化內容與元標籤meta-tags'><span>此外，WordPress 特別重視搜尋引擎優化，使建置於該平台上的網站更容易在搜尋引擎結果中獲得良好的排名。該平台能產生簡潔且結構完善的 HTML 程式碼，提供可自訂的固定連結，並支援使用 SEO 外掛程式，以針對搜尋引擎優化內容與元標籤(meta tags)。</span></h4><h4 id='wordpress-的主要優勢之一在於其龐大且活躍的社群從開發者到設計師從部落客到企業主wordpress-社群成員多元且互助互勉使用者可透過線上論壇文件教學指南以及當地的-wordpress-聚會獲得協助指引與解決方案此外社群成員亦透過提出改進建議回報錯誤以及開發佈景主題themes和外掛plugins程式為-wordpress-的發展做出貢獻'><span>WordPress 的主要優勢之一，在於其龐大且活躍的社群。從開發者到設計師，從部落客到企業主，WordPress 社群成員多元且互助互勉。使用者可透過線上論壇、文件、教學指南以及當地的 WordPress 聚會，獲得協助、指引與解決方案。此外，社群成員亦透過提出改進建議、回報錯誤，以及開發佈景主題(themes)和外掛(plugins)程式，為 WordPress 的發展做出貢獻。</span></h4><h4 id='總而言之wordpress-是一個功能多樣且易於使用的內容管理系統讓個人和企業無需具備深厚的程式設計知識也能輕鬆建立和管理網站其開源特性豐富的佈景主題與外掛生態系搜尋引擎優化功能以及強大的社群支援共同促成了其廣泛的採用與成功'><span>總而言之，WordPress 是一個功能多樣且易於使用的內容管理系統，讓個人和企業無需具備深厚的程式設計知識，也能輕鬆建立和管理網站。其開源特性、豐富的佈景主題與外掛生態系、搜尋引擎優化功能，以及強大的社群支援，共同促成了其廣泛的採用與成功。</span></h4><h4 id='以下是一份表格列出了一些常見的-wordpress-術語及其對應用途'><span>以下是一份表格，列出了一些常見的 WordPress 術語及其對應用途：</span></h4><figure class='table-figure'><table><thead><tr><th><span>術語(Terminology)</span></th><th><span>用法(Use)</span></th></tr></thead><tbody><tr><td><span>WordPress</span></td><td><span>開源內容管理系統與部落格平台</span></td></tr><tr><td><span>CMS</span></td><td><span>讓使用者能夠建立、管理及發佈數位內容</span></td></tr><tr><td><span>Themes</span></td><td><span>網站外觀與版面的預設範本</span></td></tr><tr><td><span>Plugins</span></td><td><span>可為網站增添額外功能的擴充功能</span></td></tr><tr><td><span>Posts</span></td><td><span>動態內容條目，通常用於部落格文章</span></td></tr><tr><td><span>Pages</span></td><td><span>靜態內容項目，例如「關於我們」、「聯絡我們」和「服務」</span></td></tr><tr><td><span>Permalinks</span></td><td><span>指定個別文章／頁面永久網址的網址</span></td></tr><tr><td><span>Database</span></td><td><span>儲存網站內容、留言、使用者資訊等。</span></td></tr><tr><td><span>SEO</span></td><td><span>優化網站內容以提升搜尋引擎排名</span></td></tr><tr><td><span>User Roles</span></td><td><span>為網站使用者設定不同層級的存取權限</span></td></tr><tr><td><span>HTML</span></td><td><span>超文本標記語言(Hypertext Markup Language )，用於組織網頁內容</span></td></tr><tr><td><span>Community</span></td><td><span>由 WordPress 使用者、開發者及貢獻者組成的支援網絡</span></td></tr></tbody></table></figure><h4 id='請注意此表格僅列出部分術語及其用途wordpress-涵蓋了一個龐大的生態系統其中包含更多術語與功能'><span>請注意，此表格僅列出部分術語及其用途。WordPress 涵蓋了一個龐大的生態系統，其中包含更多術語與功能。</span></h4><h4 id='您是否好奇wordpress-這個最初僅作為部落格平台設計的系統是如何超越其-humble-beginnings-humble-beginnings-）蛻變為一款強大的工具進而徹底改變了各行各業並推動了令人驚嘆的創新'><span>您是否好奇，WordPress 這個最初僅作為部落格平台設計的系統，是如何超越其 humble beginnings（ humble beginnings ），蛻變為一款強大的工具，進而徹底改變了各行各業，並推動了令人驚嘆的創新？</span></h4><ol start='' ><li><h4 id='電子商務網站e-commerce-websiteswordpress-結合-woocommerce-等熱門外掛程式已成為建立線上商店的強大平台讓企業能輕鬆銷售產品與服務'><span>電子商務網站(E-commerce Websites)：WordPress 結合 WooCommerce 等熱門外掛程式，已成為建立線上商店的強大平台，讓企業能輕鬆銷售產品與服務。</span></h4></li><li><h4 id='企業網站corporate-websites從小型新創公司到大型企業許多企業都利用-wordpress-建立官方網站展示其產品服務及公司資訊'><span>企業網站(Corporate Websites)：從小型新創公司到大型企業，許多企業都利用 WordPress 建立官方網站，展示其產品、服務及公司資訊。</span></h4></li><li><h4 id='新聞與雜誌網站news-and-magazine-siteswordpress-具備動態功能與內容管理能力使其成為新聞機構線上雜誌及出版平台的理想選擇'><span>新聞與雜誌網站(News and Magazine Sites)：WordPress 具備動態功能與內容管理能力，使其成為新聞機構、線上雜誌及出版平台的理想選擇。</span></h4></li><li><h4 id='非營利與慈善網站nonprofit-and-charity-websites致力於社會公益與慈善事業的組織已運用-wordpress-建立網站用以提升公眾意識募集捐款並與支持者互動'><span>非營利與慈善網站(Nonprofit and Charity Websites)：致力於社會公益與慈善事業的組織，已運用 WordPress 建立網站，用以提升公眾意識、募集捐款，並與支持者互動。</span></h4></li><li><h4 id='教育網站educational-websites大學學校及線上學習平台已採用-wordpress為學生教職員及社區建立互動且資訊豐富的網站'><span>教育網站(Educational Websites)：大學、學校及線上學習平台已採用 WordPress，為學生、教職員及社區建立互動且資訊豐富的網站。</span></h4></li><li><h4 id='政府網站government-websites政府機關與公共機構運用wordpress-建立網站為公民提供服務資訊及資源的管道'><span>政府網站(Government Websites)：政府機關與公共機構運用WordPress 建立網站，為公民提供服務、資訊及資源的管道。</span></h4></li><li><h4 id='社群論壇community-forumswordpress-可用於建立蓬勃發展的線上社群與討論論壇促進志同道合者之間的溝通與合作'><span>社群論壇(Community Forums)：WordPress 可用於建立蓬勃發展的線上社群與討論論壇，促進志同道合者之間的溝通與合作。</span></h4></li><li><h4 id='作品集網站portfolio-websites藝術家攝影師設計師及創意專業人士利用-wordpress-展示作品建立作品集並吸引潛在客戶'><span>作品集網站(Portfolio Websites)：藝術家、攝影師、設計師及創意專業人士利用 WordPress 展示作品、建立作品集，並吸引潛在客戶。</span></h4></li><li><h4 id='會員制網站membership-websiteswordpress-搭配會員外掛程式可建立限權存取的網站提供獨家內容訂閱服務及會員專屬功能'><span>會員制網站(Membership Websites)：WordPress 搭配會員外掛程式，可建立限權存取的網站，提供獨家內容、訂閱服務及會員專屬功能。</span></h4></li><li><h4 id='預約與預訂平台booking-and-reservation-platforms住宿旅遊及服務業的企業運用-wordpress-建立預約與預訂網站讓使用者能進行預約預訂及訂位'><span>預約與預訂平台(Booking and Reservation Platforms)：住宿、旅遊及服務業的企業運用 WordPress 建立預約與預訂網站，讓使用者能進行預約、預訂及訂位。</span></h4></li><li><h4 id='求職平台job-boardswordpress-被用於建立求職平台網站將求職者與雇主連結起來提供發布職缺的管道並簡化招募流程'><span>求職平台(Job Boards)：WordPress 被用於建立求職平台網站，將求職者與雇主連結起來，提供發布職缺的管道並簡化招募流程。</span></h4></li><li><h4 id='房地產網站real-estate-websites房地產經紀人和物業管理公司運用-wordpress-建立網站用以展示房源物業詳情並提供物業搜尋功能'><span>房地產網站(Real Estate Websites)：房地產經紀人和物業管理公司運用 WordPress 建立網站，用以展示房源、物業詳情，並提供物業搜尋功能。</span></h4></li><li><h4 id='目錄網站directory-websiteswordpress-可驅動目錄網站使用者可在其中列出企業服務活動或其他分類資訊為使用者建立一個全面的資源庫'><span>目錄網站(Directory Websites)：WordPress 可驅動目錄網站，使用者可在其中列出企業、服務、活動或其他分類資訊，為使用者建立一個全面的資源庫。</span></h4></li><li><h4 id='社交網路平台social-networking-platforms雖然不如其他用途常見但-wordpress-已被用於建立利基型社交網路平台以培育社群並促進使用者之間的互動'><span>社交網路平台(Social Networking Platforms)：雖然不如其他用途常見，但 WordPress 已被用於建立利基型社交網路平台，以培育社群並促進使用者之間的互動。</span></h4></li><li><h4 id='線上社群online-communitieswordpress-可用於建立線上社群與社交平台讓使用者得以建立聯繫分享內容參與討論並建立人際關係'><span>線上社群(Online Communities)：WordPress 可用於建立線上社群與社交平台，讓使用者得以建立聯繫、分享內容、參與討論並建立人際關係。</span></h4></li></ol><h4 id='這些只是-wordpress-歷年來所建置的眾多網站中的一小部分其靈活性客製化選項以及龐大的外掛生態系統使其成為各行各業及各種用途的理想選擇'><span>這些只是 WordPress 歷年來所建置的眾多網站中的一小部分。其靈活性、客製化選項以及龐大的外掛生態系統，使其成為各行各業及各種用途的理想選擇。</span></h4></div></div>
+</body>
+</html>
