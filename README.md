@@ -2,7 +2,7 @@
 
 - #### [什麼是 WordPress？](https://github.com/dcpuse003/wordpress.github.io/blob/main/%E4%BB%80%E9%BA%BC%E6%98%AFWordPress%EF%BC%9F/%E4%BB%80%E9%BA%BC%E6%98%AFWordPress%EF%BC%9F.md)
 
-- #### 使用 WordPress 的好處
+- #### 使用 WordPress 的優勢
 
 - #### 安裝 WordPress
 
