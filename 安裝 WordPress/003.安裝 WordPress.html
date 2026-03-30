@@ -1,0 +1,617 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, 'Segoe UI Emoji', sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table th:first-child,
+table td:first-child {
+    margin-top: 0;
+}
+table th:last-child,
+table td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    pre {
+        page-break-inside: avoid;
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.mac-os #write{
+    caret-color: AccentColor;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+/*.html-for-mac {
+    --item-hover-bg-color: #E6F0FE;
+}*/
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+    opacity: 0.4;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+.menu-item-container a.menu-style-btn {
+    background-color: #f5f8fa;
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+}
+
+
+
+</style><title>003.安裝 WordPress</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='安裝-wordpress'><span>安裝 WordPress</span></h1><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%A9%98%E8%89%B201.jpg?raw=true" referrerpolicy="no-referrer"></p><h4 id='安裝-wordpress-的過程相對簡單以下是一份關於如何在網頁主機伺服器上安裝-wordpress-的一般指南'><span>安裝 WordPress 的過程相對簡單。以下是一份關於如何在網頁主機伺服器上安裝 WordPress 的一般指南：</span></h4><ol start='' ><li><h4 id='選擇網頁主機供應商choose-a-web-hosting-provider挑選一家在價格效能和功能方面符合您需求的網頁主機供應商提供簡易-wordpress-安裝功能的熱門主機供應商包括-bluehostsiteground-和-dreamhost還有一些免費託管會有一些限制但拿來練手還不錯有些還提供免費子網域就是寄託在別人家的域名地址如infinityfreewordpresscom-等'><span>選擇網頁主機供應商(Choose a Web Hosting Provider)：挑選一家在價格、效能和功能方面符合您需求的網頁主機供應商。提供簡易 WordPress 安裝功能的熱門主機供應商包括 </span><a href='https://www.bluehost.com/'><span>Bluehost</span></a><span>、</span><a href='https://eu.siteground.com/'><span>SiteGround</span></a><span> 和 </span><a href='https://www.dreamhost.com/'><span>DreamHost</span></a><span>。還有一些免費託管(會有一些限制，但拿來練手還不錯，有些還提供免費子網域，就是寄託在別人家的域名地址)，如</span><a href='https://www.infinityfree.com/'><span>InfinityFree</span></a><span>,</span><a href='https://wordpress.com/free/'><span>WordPress.com</span></a><span> 等。</span></h4></li><li><h4 id='註冊網域名稱register-a-domain如果您還沒有網域名稱就需要註冊一個許多網頁主機供應商都提供網域名稱註冊服務您也可以透過-namecheap-或-godaddy-等網域名稱註冊商單獨註冊網域名稱說明域名域名就像一個家的主要聯絡地址需註冊公開讓所有人查找並連絡的上'><span>註冊網域名稱(Register a Domain)：如果您還沒有網域名稱，就需要註冊一個。許多網頁主機供應商都提供網域名稱註冊服務，您也可以透過 Namecheap 或 GoDaddy 等網域名稱註冊商單獨註冊網域名稱。說明域名，域名就像一個家的主要聯絡地址，需註冊公開讓所有人查找並連絡的上。</span></h4></li><li><h4 id='設定主機帳戶set-up-hosting-account向您選擇的供應商註冊主機帳戶依照其指示設定帳戶提供付款資訊並完成必要的設定'><span>設定主機帳戶(Set Up Hosting Account)：向您選擇的供應商註冊主機帳戶。依照其指示設定帳戶、提供付款資訊，並完成必要的設定。</span></h4></li><li><h4 id='存取控制面板access-control-panel主機帳戶設定完成後您通常會收到登入憑證以存取主機控制面板最常見的控制面板是-cpanel但不同主機供應商可能有其自訂的控制面板'><span>存取控制面板(Access Control Panel)：主機帳戶設定完成後，您通常會收到登入憑證以存取主機控制面板。最常見的控制面板是 cPanel，但不同主機供應商可能有其自訂的控制面板。</span></h4></li><li><h4 id='建立資料庫create-a-database在控制面板中尋找名為資料庫或mysql-資料庫的區塊建立一個新資料庫並記下資料庫名稱使用者名稱和密碼這些資訊在-wordpress-安裝過程中將會用到'><span>建立資料庫(Create a Database)：在控制面板中，尋找名為「資料庫」或「MySQL 資料庫」的區塊。建立一個新資料庫，並記下資料庫名稱、使用者名稱和密碼。這些資訊在 WordPress 安裝過程中將會用到。</span></h4><p><img src="https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/image/MySQL%20Database%20Wizard.png" referrerpolicy="no-referrer"></p><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%A9%98%E8%89%B201.jpg?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/MySQL%20%E8%B3%87%E6%96%99%E5%BA%AB%E7%B2%BE%E9%9D%88%E8%AA%AA%E6%98%8E01.png?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%A9%98%E8%89%B201.jpg?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%AD%A5%E9%A9%9F%202%EF%BC%9A%E5%BB%BA%E7%AB%8B%E8%B3%87%E6%96%99%E5%BA%AB%E7%94%A8%E6%88%B6.png?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%A9%98%E8%89%B201.jpg?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%AD%A5%E9%A9%9F%203%EF%BC%9A%E5%B0%87%E4%BD%BF%E7%94%A8%E8%80%85%E6%96%B0%E5%A2%9E%E8%87%B3%E8%B3%87%E6%96%99%E5%BA%AB.png?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%A9%98%E8%89%B201.jpg?raw=true" referrerpolicy="no-referrer"></p><p>&nbsp;</p></li></ol><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%AD%A5%E9%A9%9F%203%EF%BC%9A%E5%B0%87%E4%BD%BF%E7%94%A8%E8%80%85%E6%96%B0%E5%A2%9E%E8%87%B3%E8%B3%87%E6%96%99%E5%BA%AB.png?raw=true" referrerpolicy="no-referrer"></p><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%A9%98%E8%89%B201.jpg?raw=true" referrerpolicy="no-referrer"></p><ol start='6' ><li><h4 id='下載-wordpress造訪-wordpress-官方網站-wordpressorg-並下載最新版本的-wordpress下載的檔案是壓縮套件-zip您可以將其儲存到您的電腦上'><span>下載 WordPress：造訪 WordPress 官方網站 (wordpress.org) 並下載最新版本的 WordPress。下載的檔案是壓縮套件 (.zip)，您可以將其儲存到您的電腦上。</span></h4><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E8%87%AA%E8%A1%8C%E4%B8%8B%E8%BC%89%E4%B8%A6%E5%AE%89%E8%A3%9DWordPress.png?raw=true" referrerpolicy="no-referrer"></p></li></ol><ol start='7' ><li><h4 id='上傳-wordpress-檔案使用-filezilla-等-ftp-用戶端連接到您的主機伺服器並導覽至您網域的根目錄通常為-publichtml-或htdocs-或-www）從下載的-zip-檔案中提取-wordpress-文件並將其上傳到根目錄'><span>上傳 WordPress 檔案：使用 FileZilla 等 FTP 用戶端連接到您的主機伺服器，並導覽至您網域的根目錄（通常為 public_html 或htdocs 或 www）。從下載的 zip 檔案中提取 WordPress 文件，並將其上傳到根目錄。</span></h4><h4 id='login-to-cpanel登入-cpanel'><span>Login to cPanel(登入 cPanel)</span></h4><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%AA%94%E6%A1%88%E7%AE%A1%E7%90%86%E5%93%A1001.png?raw=true" referrerpolicy="no-referrer"></p><h4 id='upload-wordpress-files上傳-wordpress-文件'><span>Upload WordPress Files(上傳 WordPress 文件)</span></h4></li><li><h4 id='安裝-wordpress開啟網頁瀏覽器並造訪您的網域例如-yourdomaincom）-wordpress-安裝精靈將會出現選擇您喜歡的語言然後點擊開始lets-go按鈕'><span>安裝 WordPress：開啟網頁瀏覽器並造訪您的網域（例如 yourdomain.com）。 WordPress 安裝精靈將會出現。選擇您喜歡的語言，然後點擊“開始(Let&#39;s Go)”按鈕。</span></h4><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E9%81%B8%E6%93%87Wordpress%20%E6%8E%A7%E5%88%B6%E5%8F%B0%E6%82%A8%E5%96%9C%E6%AD%A1%E7%9A%84%E8%AA%9E%E8%A8%80.png?raw=true" referrerpolicy="no-referrer"></p></li><li><h4 id='設定資料庫設定輸入您先前建立的資料庫詳細信息包括資料庫名稱使用者名稱密碼和資料庫主機通常為localhost）除非有特殊原因需要更改否則請將表前綴保留為預設值wp'><span>設定資料庫設定：輸入您先前建立的資料庫詳細信息，包括資料庫名稱、使用者名稱、密碼和資料庫主機（通常為「localhost」）。除非有特殊原因需要更改，否則請將表前綴保留為預設值「wp_」。</span></h4></li><li><h4 id='執行安裝點選提交submit按鈕wordpress-將檢查資料庫連線和設定如果一切正常您將看到成功訊息點擊執行安裝run-the-installation按鈕'><span>執行安裝：點選「提交(Submit)」按鈕，WordPress 將檢查資料庫連線和設定。如果一切正常，您將看到成功訊息。點擊“執行安裝(Run the installation)”按鈕。</span></h4></li><li><h4 id='設定網站資訊提供網站標題使用者名稱密碼和初始管理員帳戶的電子郵件地址選擇一個強密碼來保護您的-wordpress-安裝至關重要'><span>設定網站資訊：提供網站標題、使用者名稱、密碼和初始管理員帳戶的電子郵件地址。選擇一個強密碼來保護您的 WordPress 安裝至關重要。</span></h4><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/Wordpress%20%E5%AE%89%E8%A3%9D%E7%B6%B2%E7%AB%99%E6%89%80%E9%9C%80%E8%B3%87%E8%A8%8A%E5%8F%8A%E6%AD%A1%E8%BF%8E%E4%BB%8B%E9%9D%A2.png?raw=true" referrerpolicy="no-referrer"></p></li><li><h4 id='完成安裝點選安裝-wordpressinstall-wordpress按鈕wordpress-將完成安裝完成後您將看到一條確認訊息其中包含您的登入-url'><span>完成安裝：點選「安裝 WordPress(Install WordPress)」按鈕，WordPress 將完成安裝。完成後，您將看到一條確認訊息，其中包含您的登入 URL。</span></h4></li><li><h4 id='存取-wordpress-控制面板造訪登入-url通常為-yourdomaincomwp-admin）輸入您的使用者名稱和密碼您將被重定向到-wordpress-控制面板在那裡您可以開始自訂網站添加內容以及安裝主題和外掛程式完成您已成功在虛擬主機伺服器上安裝了-wordpress現在您可以開始使用wordpress-平台建立和管理您的網站'><span>存取 WordPress 控制面板：造訪登入 URL（通常為 yourdomain.com/wp-admin），輸入您的使用者名稱和密碼。您將被重定向到 WordPress 控制面板，在那裡您可以開始自訂網站、添加內容以及安裝主題和外掛程式。完成！您已成功在虛擬主機伺服器上安裝了 WordPress。現在，您可以開始使用WordPress 平台建立和管理您的網站。</span></h4><h4 id='除了前面描述的手動安裝過程外許多虛擬主機提供者還提供了一種更簡單的方法即透過其控制面板例如-cpanel）借助-softaculous-等自動安裝程式來安裝-wordpress'><span>除了前面描述的手動安裝過程外，許多虛擬主機提供者還提供了一種更簡單的方法，即透過其控制面板（例如 cPanel）借助 Softaculous 等自動安裝程式來安裝 WordPress。</span></h4><h4 id='以下是在-cpanel-中使用-softaculous-安裝-wordpress-的方法'><span>以下是在 cPanel 中使用 Softaculous 安裝 WordPress 的方法：</span></h4><ol start='' ><li><h4 id='登入您的虛擬主機提供者提供的-cpanel-帳戶通常您可以透過造訪-yourdomaincomcpanel-並輸入您的憑證來登入'><span>登入您的虛擬主機提供者提供的 cPanel 帳戶。通常，您可以透過造訪 yourdomain.com/cpanel 並輸入您的憑證來登入。</span></h4></li><li><h4 id='在-cpanel-介面中尋找softaculous或wordpress-installer圖示'><span>在 cPanel 介面中尋找「Softaculous」或「WordPress Installer」圖示。</span></h4><h4 id='它通常位於軟體或自動安裝程式部分點擊該圖示即可存取-softaculous-自動安裝程式'><span>它通常位於“軟體”或“自動安裝程式”部分。點擊該圖示即可存取 Softaculous 自動安裝程式。</span></h4><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/Softaculous%20%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F%E5%AE%89%E8%A3%9D%E7%A8%8B%E5%BA%8F001.png?raw=true" referrerpolicy="no-referrer"></p></li></ol><ol start='3' ><li><h4 id='進入-softaculous-後您將看到可用軟體應用程式清單尋找-wordpress它通常會突出顯示點擊-wordpress-圖示繼續'><span>進入 Softaculous 後，您將看到可用軟體應用程式清單。尋找 WordPress，它通常會突出顯示。點擊 WordPress 圖示繼續。</span></h4></li><li><h4 id='接下來點選安裝install按鈕開始安裝程序'><span>接下來，點選「安裝(Install)」按鈕開始安裝程序。</span></h4></li><li><h4 id='填寫安裝詳細資料'><span>填寫安裝詳細資料：</span></h4><ul><li><h4 id='選擇要安裝-wordpress-的網域domain如果您有多個域名請選擇要使用的域名'><span>選擇要安裝 WordPress 的網域(Domain)。如果您有多個域名，請選擇要使用的域名。</span></h4></li><li><h4 id='如果您想將-wordpress-安裝在根目錄例如-yourdomaincom）請將目錄directory欄位留空如果您想將其安裝在子目錄例如-ourdomaincomblog）請輸入所需的目錄名稱'><span>如果您想將 WordPress 安裝在根目錄（例如 yourdomain.com），請將「目錄(Directory)」欄位留空。如果您想將其安裝在子目錄（例如 ourdomain.com/blog），請輸入所需的目錄名稱。</span></h4></li><li><h4 id='輸入網站名稱和描述name-and-description'><span>輸入網站名稱和描述(name and description)。</span></h4></li><li><h4 id='設定管理員使用者名稱admin-username和密碼password請確保選擇安全的密碼'><span>設定管理員使用者名稱(admin username)和密碼(password)。請確保選擇安全的密碼。</span></h4></li><li><h4 id='輸入您的管理員信箱地址email-address'><span>輸入您的管理員信箱地址(email address)。</span></h4></li></ul></li><li><h4 id='根據需要自訂customize網站設定-softaculous-提供選擇網站標題標語以及啟用停用外掛程式和主題的選項'><span>根據需要自訂(Customize)網站設定。 Softaculous 提供選擇網站標題、標語以及啟用/停用外掛程式和主題的選項。</span></h4><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E4%BD%BF%E7%94%A8Softaculous%E5%AE%A2%E8%A3%BD%E5%8C%96%E7%B6%B2%E7%AB%99%E8%A8%AD%E5%AE%9A01.png?raw=true" referrerpolicy="no-referrer"></p></li><li><h4 id='根據需要選擇一個主題-softaculous-在安裝過程中提供一系列免費主題供您選擇您也可以跳過此步驟稍後在-wordpress-控制面板中選擇主題'><span>根據需要選擇一個主題。 Softaculous 在安裝過程中提供一系列免費主題供您選擇。您也可以跳過此步驟，稍後在 WordPress 控制面板中選擇主題。</span></h4></li><li><h4 id='填寫完所需資訊後請仔細檢查以確保準確無誤'><span>填寫完所需資訊後，請仔細檢查以確保準確無誤。</span></h4></li><li><h4 id='點選安裝install或完成finish按鈕開始安裝程序-softaculous-將使用您提供的資訊安裝-wordpress'><span>點選「安裝(Install)」或「完成(Finish)」按鈕開始安裝程序。 Softaculous 將使用您提供的資訊安裝 WordPress。</span></h4></li><li><h4 id='安裝完成後softaculous-將顯示一則成功訊息其中包含-wordpress-控制台的登入-url'><span>安裝完成後，Softaculous 將顯示一則成功訊息，其中包含 WordPress 控制台的登入 URL。</span></h4></li><li><h4 id='造訪提供的-url例如-yourdomaincomwp-admin）即可造訪您的-wordpress-網站並使用您在安裝過程中設定的管理員使用者名稱和密碼登入'><span>造訪提供的 URL（例如 yourdomain.com/wp-admin）即可造訪您的 WordPress 網站，並使用您在安裝過程中設定的管理員使用者名稱和密碼登入。</span></h4></li></ol></li></ol><h4 id='在-cpanel-中使用-softaculous-和-wordpress-自動安裝程式可以簡化安裝過程讓您無需手動上傳檔案或設定資料庫即可快速輕鬆地設定-wordpress'><span>在 cPanel 中使用 Softaculous 和 WordPress 自動安裝程式可以簡化安裝過程，讓您無需手動上傳檔案或設定資料庫即可快速輕鬆地設定 WordPress。</span></h4><h4 id='請注意特定步驟可能會因您的網站寄存服務提供者及其提供的-cpanel-版本而略有不同'><span>請注意，特定步驟可能會因您的網站寄存服務提供者及其提供的 cPanel 版本而略有不同。</span></h4><p>&nbsp;</p><p><img src="https://github.com/dcpuse003/wordpress.github.io/blob/main/image/%E6%A9%98%E8%89%B201.jpg?raw=true" referrerpolicy="no-referrer"></p><p><span>Jangow 20240101</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p></div></div>
+</body>
+</html>
