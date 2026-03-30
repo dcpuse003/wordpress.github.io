@@ -4,7 +4,7 @@
 
 - #### [使用 WordPress 的優勢](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E4%BD%BF%E7%94%A8%20WordPress%20%E7%9A%84%E5%84%AA%E5%8B%A2/%E4%BD%BF%E7%94%A8%20WordPress%20%E7%9A%84%E5%84%AA%E5%8B%A2.html)
 
-- #### 安裝 WordPress
+- #### [安裝 WordPress](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E5%AE%89%E8%A3%9D%20WordPress/003.%E5%AE%89%E8%A3%9D%20WordPress.html)
 
 - #### 建構本地開發環境
 
