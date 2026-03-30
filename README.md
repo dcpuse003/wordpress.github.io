@@ -6,7 +6,7 @@
 
 - #### [安裝 WordPress](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E5%AE%89%E8%A3%9D%20WordPress/003.%E5%AE%89%E8%A3%9D%20WordPress.html)
 
-- #### 建構本地開發環境
+- #### [建構本地開發環境](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E5%BB%BA%E6%A7%8B%E6%9C%AC%E5%9C%B0%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83/%E5%BB%BA%E6%A7%8B%E6%9C%AC%E5%9C%B0%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83.html)
 
 - #### 了解 WordPress 控制面板
 
