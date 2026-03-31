@@ -12,7 +12,7 @@
 
 - #### [自訂常規設定](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E8%87%AA%E8%A8%82%E5%B8%B8%E8%A6%8F%E8%A8%AD%E5%AE%9A/%E8%87%AA%E8%A8%82%E5%B8%B8%E8%A6%8F%E8%A8%AD%E5%AE%9A.html)
 
-- #### 探索主題和插件
+- #### [探索主題和插件](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E6%8E%A2%E7%B4%A2%E4%B8%BB%E9%A1%8C%E5%92%8C%E6%8F%92%E4%BB%B6/%E6%8E%A2%E7%B4%A2%E4%B8%BB%E9%A1%8C%E5%92%8C%E6%8F%92%E4%BB%B6.html)
 
 - #### 建立和管理文章
 
