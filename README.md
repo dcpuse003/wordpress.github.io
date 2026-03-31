@@ -10,7 +10,7 @@
 
 - #### [了解 WordPress 控制面板](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E4%BA%86%E8%A7%A3%20WordPress%20%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF/%E4%BA%86%E8%A7%A3%20WordPress%20%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF.html)
 
-- #### 自訂常規設定
+- #### [自訂常規設定](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E8%87%AA%E8%A8%82%E5%B8%B8%E8%A6%8F%E8%A8%AD%E5%AE%9A/%E8%87%AA%E8%A8%82%E5%B8%B8%E8%A6%8F%E8%A8%AD%E5%AE%9A.html)
 
 - #### 探索主題和插件
 
