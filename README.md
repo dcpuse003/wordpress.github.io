@@ -14,7 +14,8 @@
 
 - #### [探索主題和插件](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E6%8E%A2%E7%B4%A2%E4%B8%BB%E9%A1%8C%E5%92%8C%E6%8F%92%E4%BB%B6/%E6%8E%A2%E7%B4%A2%E4%B8%BB%E9%A1%8C%E5%92%8C%E6%8F%92%E4%BB%B6.html)
 
-- #### 建立和管理文章
+- #### [建立和管理文章](http://htmlpreview.github.io/?https://raw.githubusercontent.com/dcpuse003/wordpress.github.io/refs/heads/main/%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%AE%A1%E7%90%86%E6%96%87%E7%AB%A0/%E5%BB%BA%E7%AB%8B%E5%92%8C%E7%AE%A1%E7%90%86%E6%96%87%E7%AB%A0.html)
+
 
 - #### 建立和管理頁面
 
